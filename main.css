@@ -27,6 +27,12 @@ body {
     text-align: center;
     font-size: 30px;
 }
+
+#pscore {
+    color: #01BBFF;
+    text-align: center;
+    font-size: 30px;
+}
  
 .grid #question {
     font-family: "monospace";

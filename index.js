@@ -4,6 +4,7 @@
         this.score = 0;
         this.questions = questions;
         this.questionIndex = 0; 
+        this.percent =0.0;
     }
     
     //prototype is used to keep only one copy of functions for all the objects(instances)
@@ -51,7 +52,7 @@
     function loadQuestions(){
         if(quiz.isEnded()){
         //show scores
-            showScores();
+            showScores();           
         }
         else{
 
@@ -80,24 +81,30 @@
     }
 
     //function to keep track of scores and show scores obtained in quiz
+
     function showScores(){
         let scoreHtml = "<h1>Result</h1>";
-        scoreHtml += "<h2 id='score'>Your scores:"+quiz.score+ " </h2>"
+        scoreHtml += "<h2 id='score'>Your scores is:"+quiz.score+"</h2><br>"
+                     +"<h2  id='pscore'>Your Percentage is:"+quiz.score*20 +"%"+"</h2><br>"
+
         let quizElement = document.getElementById("quiz");
-        quizElement.innerHTML = scoreHtml;
+        quizElement.innerHTML = scoreHtml; 
+
+        alert("You scored "+quiz.score+ ". That's "+quiz.score*20+"%.");
     }
-      
-      //function to keep track of progress made in terms of questions attempted at any point in quiz
+    
+
+
+
+/*<button onclick="showAlert()">Show alert</button>
+  function showAlert() {
+    var myText = "This can be whatever text you like!";
+    alert (myText);
+  }*/
+
+    //function to keep track of progress made in terms of questions attempted at any point in quiz
     function showProgressBar(){
         let currentQuestionNumber = quiz.questionIndex + 1;
         let progressElement = document.getElementById("progress");
         progressElement.innerHTML = "Question " + currentQuestionNumber + " of " + quiz.questions.length;
     }
-
-
-    
-    
-
-
-
-    
